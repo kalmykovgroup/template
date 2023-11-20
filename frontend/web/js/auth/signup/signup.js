@@ -11,7 +11,7 @@ $(".methodSelectionSignup a").on('click', function(e){
         $("#signup-form .blockFields input").attr("disabled", "disabled");
         $("#signup-form .blockFields #signupform-" + name).removeAttr('disabled');
 
-        $("#signup-form .blockFields .form-group").css('display', 'none');
+        $("#signup-form .blockFields .field_block").css('display', 'none');
 
         $("#signup-form .blockFields  .field-signupform-" + name).css('display', 'block');
 

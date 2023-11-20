@@ -74,6 +74,39 @@
     border-top-right-radius: 5px;
     border: 1px solid green;
 }
+
+.field_block{
+    position: relative;
+    margin-top: 20px;
+}
+.field_block .form-label{
+    position: absolute;
+    color: #3b3b3b;
+    left: 10px;
+}
+
+.field_block .form-label:after {
+    color: #fa5e5e;
+    content: "*";
+    margin-left: 4px;
+}
+
+.form-control{
+    padding: 22px 36px 6px 12px;
+    font-size: 16px;
+    line-height: 20px;
+    /* #f0f2f3*/
+    background-color: rgba(21, 82, 0, 0.17);
+    border: 0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    resize: none;
+    width: 100%;
+}
 /*-----end-------*/
 
 

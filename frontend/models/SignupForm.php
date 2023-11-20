@@ -2,11 +2,11 @@
 
 namespace frontend\models;
 
-use common\models\FullInfo;
-use common\models\ValidateForm;
+use app\models\UserInfo;
+use app\models\ValidateForm;
+use common\models\User;
 use Yii;
 use yii\base\Model;
-use common\models\User;
 use yii\db\Exception;
 
 /**
@@ -70,7 +70,7 @@ class SignupForm extends Model
         $transaction = $user->getDb()->beginTransaction();
         try {
             if ($user->save()) {
-                $fullInfo = new FullInfo(['user_id' => $user->id,]);
+                $fullInfo = new UserInfo(['user_id' => $user->id,]);
                 if($fullInfo->save()) {
                     $transaction->commit();
                      Yii::$app->user->login($user);
@@ -89,6 +89,17 @@ class SignupForm extends Model
 
         return false;
     }
+
+    public function attributeLabels(): array
+    {
+        return [
+            'id' => 'ID',
+            'email' => 'E-mail',
+            'password' => 'Придумайте пароль',
+            'phone' => 'Телефон',
+        ];
+    }
+
 
     /**
      * Sends confirmation email to user

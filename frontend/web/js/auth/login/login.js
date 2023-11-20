@@ -12,7 +12,7 @@ $(".methodSelectionLogin a").on('click', function(e){
         $("#login-form .blockFields input").attr("disabled", "disabled");
          $("#login-form .blockFields #loginform-" + name).removeAttr('disabled');
 
-        $("#login-form .blockFields .form-group").css('display', 'none');
+        $("#login-form .blockFields .field_block").css('display', 'none');
 
         $("#login-form .blockFields  .field-loginform-" + name).css('display', 'block');
 

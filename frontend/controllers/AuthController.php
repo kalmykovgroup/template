@@ -2,9 +2,9 @@
 
 namespace frontend\controllers;
 
+use app\models\LoginForm;
 use common\models\Auth;
 use common\models\FullInfo;
-use common\models\LoginForm;
 use common\models\User;
 use Exception;
 use frontend\models\PasswordResetRequestForm;
@@ -14,11 +14,7 @@ use frontend\models\SignupForm;
 use frontend\models\VerifyEmailForm;
 use InvalidArgumentException;
 use Yii;
-use yii\authclient\clients\Facebook;
-use yii\base\ErrorException;
-use yii\base\InvalidRouteException;
 use yii\bootstrap5\ActiveForm;
-use yii\console\ErrorHandler;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;

@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'enableAjaxValidation' => true,
             'fieldConfig' => [
                 'template' => "{label}\n{input}\n{error}",
-                'options' => ['class' => 'form-group'],
+                'options' => ['class' => 'field_block'],
             ],
         ]); ?>
 
@@ -40,13 +40,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="blockFields">
 
-            <?= $form->field($model, 'phone')->textInput(['placeholder'=>'Введите Phone',])->label(false)?>
-            <?= $form->field($model, 'email')->textInput(['placeholder'=>'Введите Email',])->label(false)?>
+            <?= $form->field($model, 'phone')->textInput()?>
+            <?= $form->field($model, 'email')->textInput()?>
 
         </div>
 
 
-        <?= $form->field($model, 'password')->passwordInput(['placeholder'=>'Придумайте пароль',])->label(false) ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
         <?= $form->field($model, 'consent_to_data_processing')->checkbox([
             'checked' => true,

@@ -2,9 +2,9 @@
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
-/** @var LoginForm $model */
+/** @var \app\models\LoginForm $model */
 
-use common\models\LoginForm;
+use app\models\LoginForm;
 use frontend\assets\Auth\AuthAsset;
 use frontend\assets\Auth\LoginAsset;
 use yii\bootstrap5\ActiveForm;
@@ -28,7 +28,7 @@ LoginAsset::register($this);
             'action' => '/auth/login',
             'fieldConfig' => [
                 'template' => "{label}\n{input}\n{error}",
-                'options' => ['class' => 'form-group'],
+                'options' => ['class' => 'field_block'],
             ],
         ]); ?>
 
@@ -47,12 +47,7 @@ LoginAsset::register($this);
         </div>
 
 
-        <?= $form->field($model, 'password', [
-            'labelOptions' => [ 'class' => 'visually-hidden' ],
-
-        ])->passwordInput([
-            'placeholder'=>'Password',
-        ])?>
+        <?= $form->field($model, 'password')->passwordInput()?>
 
         <div id="bigErrorMessage"></div>
 

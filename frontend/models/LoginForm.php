@@ -1,7 +1,8 @@
 <?php
 
-namespace common\models;
+namespace app\models;
 
+use common\models\User;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;
@@ -16,7 +17,6 @@ use yii\db\ActiveRecord;
  * @property string $phone
  * @property string $password
  * @property bool $rememberMe
- * @property string $login_method
  */
 
 
@@ -126,5 +126,15 @@ class LoginForm extends Model
 
         return $this->_user;
 
+    }
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'login' => 'Логин',
+            'email' => 'E-mail',
+            'phone' => 'Телефон',
+            'password' => 'Пароль',
+        ];
     }
 }
