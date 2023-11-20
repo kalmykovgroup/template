@@ -1,0 +1,17 @@
+.site-login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.field-loginform-login, .field-loginform-phone{
+    display: none;
+}
+#loginform-email, #loginform-login, #loginform-password, #loginform-phone{
+    height: 50px;
+    font-size: 20px;
+}
+
+
