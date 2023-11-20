@@ -169,46 +169,65 @@
     margin-top: 10px;
     display: flex;
     align-items: center;
-
+    justify-content: flex-end;
 }
 .recoverPassword a{
-    color: #6c6c6c;
+    color: #3777ff;
+  text-decoration: underline;
 }
 
 .blockServices{
-    width: 100%;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
+width: 100%;
+padding-top: 20px;
+display: flex;
+flex-direction: column;
 }
 
 .blockServices .title{
-    width: 100%;
-    height: 20px;
-    font-weight: 500;
+width: 100%;
+height: 20px;
+font-weight: 500;
 }
 
 .aServices{
-    width: 100%;
-    height: 60px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+width: 100%;
+height: 60px;
+margin-top: 10px;
+display: flex;
+justify-content: space-between;
 }
 
 .blockServices .service{
-    width: 70px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #b6b6b6;
-    border-radius: 5px;
-    padding: 5px;
+width: 70px;
+height: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1px solid #b6b6b6;
+border-radius: 5px;
+padding: 5px;
 }
 
 .blockServices .service svg{
-    width: 50px;
-    height: 50px;
+width: 50px;
+height: 50px;
+}
+
+.blockBtnSendForm{
+width: 100%;
+display: flex;
+margin-top: 20px;
+}
+.blockBtnSendForm a, .blockBtnSendForm button{
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0 15px;
+height: 40px;
+background: #0d6efd;
+color: white;
+font-weight: 500;
+border-radius: 5px;
+border: none;
 }
 

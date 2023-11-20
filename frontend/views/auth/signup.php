@@ -48,17 +48,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'password')->passwordInput() ?>
 
+        <div id="bigErrorMessage"></div>
+
         <?= $form->field($model, 'consent_to_data_processing')->checkbox([
             'checked' => true,
             'label'=> 'Согласие на обработку данных'
         ]) ?>
 
-        <div id="bigErrorMessage"></div>
-        <div class="form-group">
-            <div class="blockBtn">
-                <button type="submit">Создать аккаунт</button>
-            </div>
+        <div class="blockBtnSendForm">
+            <button type="submit" >Создать аккаунт</button>
         </div>
+
         <div class="bottom_text_reg">Уже зарегистрированны? выполните &nbsp;<a href="<?=Url::to(['auth/login']);?>">Вход</a></div>
 
 

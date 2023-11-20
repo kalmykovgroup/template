@@ -22,14 +22,18 @@ $(".methodSelectionLogin a").on('click', function(e){
 });
 
 
-
+$("#login-form").on('beforeSubmit', function(e){
+    return false;
+});
 
 
 $("#login-form").on('beforeSubmit', function(e){
     ShowLoadingAnimation();
 
     $(".errorBigMessage").text("").css("display", "none");
-    $(".blockFields .validate_error").text("").css("display", "none");
+    $("#login-form input").removeClass('is-valid').removeClass('is-invalid'); //Убираем маркера указывающие на ошибку
+    $("#login-form .help-block").text(''); //Очищаем ощибки
+
     $.ajax({
         url:     '/auth/login', //url страницы (action_ajax_form.php)
         type:     "POST", //метод отправки

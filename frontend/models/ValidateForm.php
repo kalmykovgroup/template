@@ -17,7 +17,7 @@ class ValidateForm
     public static function passwordRules(): array{
         return [
                 ['password', 'trim' ],// обрезает пробелы вокруг
-                [['password'], 'required', 'message' => "{attribute} не может быть пустым!"] ,
+                [['password'], 'required', 'message' => "Поле не может быть пустым!"] ,
                 ['password', 'string', 'length' => [6, 100], 'tooShort' => Yii::t('app', "Мин. длинна 6 сим."), 'tooLong' => Yii::t('app', "Макс. длинна 100 сим.")],
                 ['password', 'match', 'pattern' =>  '/^(?=.*[a-z])/','message' => Yii::t('app', "Пароль должен содержать латинские буквы")],
                 ['password', 'match', 'pattern' =>  '/^(?=.*[0-9])/','message' => Yii::t('app', "Пароль должен содержать цыфры")],
@@ -27,7 +27,7 @@ class ValidateForm
         return [
                 ['password', 'trim' ],// обрезает пробелы вокруг
                 ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('app', "Пароли не совпадают")],
-                [['password_repeat'], 'required', 'message' => Yii::t('app', "{attribute} не может быть пустым!")] ,
+                [['password_repeat'], 'required', 'message' => Yii::t('app',    "Поле не может быть пустым!")] ,
         ];
     }
     public static function loginRules(): array{

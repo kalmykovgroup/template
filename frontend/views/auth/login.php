@@ -57,8 +57,8 @@ LoginAsset::register($this);
                 'label'=> 'Запомнить'
             ]) ?>
 
-            <div class="blockBtn">
-                <button type="submit">Войти</button>
+            <div class="blockBtnSendForm">
+                <a href="#">Войти</a>
             </div>
         </div>
         <div class="bottom_text_reg">Нет Аккаунта? пройдите &nbsp;<a href="<?=Url::to(['auth/signup']);?>">Регистрацию</a></div>
