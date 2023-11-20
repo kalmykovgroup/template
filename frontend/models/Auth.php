@@ -1,9 +1,8 @@
 <?php
 
-namespace common\models;
+namespace app\models;
 
-use yii\db\ActiveQuery;
-use yii\db\ActiveRecord;
+use Yii;
 
 /**
  * This is the model class for table "auth".
@@ -12,17 +11,15 @@ use yii\db\ActiveRecord;
  * @property int $user_id
  * @property string $source
  * @property string $source_id
- * @property string $created_at
- * @property string $updated_at
  *
  * @property User $user
  */
-class Auth extends ActiveRecord
+class Auth extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
-    public static function tableName(): string
+    public static function tableName()
     {
         return 'auth';
     }
@@ -30,12 +27,11 @@ class Auth extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function rules(): array
+    public function rules()
     {
         return [
             [['user_id', 'source', 'source_id'], 'required'],
             [['user_id'], 'integer'],
-            [['created_at', 'updated_at'], 'safe'],
             [['source', 'source_id'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -44,24 +40,22 @@ class Auth extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
             'source' => 'Source',
             'source_id' => 'Source ID',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
         ];
     }
 
     /**
      * Gets query for [[User]].
      *
-     * @return ActiveQuery
+     * @return \yii\db\ActiveQuery
      */
-    public function getUser():  ActiveQuery
+    public function getUser()
     {
         return $this->hasOne(User::class, ['id' => 'user_id']);
     }

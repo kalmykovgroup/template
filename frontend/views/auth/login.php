@@ -40,9 +40,9 @@ LoginAsset::register($this);
 
         <div class="blockFields">
 
-            <?= $form->field($model, 'phone')->textInput(['placeholder'=>'Phone',])->label(false)?>
+            <?= $form->field($model, 'phone')->textInput()?>
 
-            <?= $form->field($model, 'email')->textInput(['placeholder'=>'Email',])->label(false)?>
+            <?= $form->field($model, 'email')->textInput()?>
 
         </div>
 

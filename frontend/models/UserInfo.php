@@ -1,33 +1,31 @@
 <?php
 
-namespace common\models;
+namespace app\models;
 
 use Yii;
-use yii\behaviors\TimestampBehavior;
-use yii\db\BaseActiveRecord;
 
 /**
- * This is the model class for table "full_info".
+ * This is the model class for table "user_info".
  *
  * @property int $id
  * @property int $user_id
- * @property int|null $address_id
  * @property string|null $last_name
  * @property string|null $patronymic
  * @property string|null $date_of_birth
  * @property string|null $gender
+ * @property string $created_at
  * @property string $updated_at
  *
  * @property User $user
  */
-class FullInfo extends \yii\db\ActiveRecord
+class UserInfo extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'full_info';
+        return 'user_info';
     }
 
     /**
@@ -37,26 +35,11 @@ class FullInfo extends \yii\db\ActiveRecord
     {
         return [
             [['user_id'], 'required'],
-            [['user_id', 'address_id'], 'integer'],
-            [['date_of_birth', 'updated_at'], 'safe'],
+            [['user_id'], 'integer'],
+            [['date_of_birth', 'created_at', 'updated_at'], 'safe'],
             [['gender'], 'string'],
             [['last_name', 'patronymic'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
-        ];
-    }
-
-    public function behaviors(): array
-    {
-        return [
-            [
-                'class' => TimestampBehavior::class,
-                'attributes' => [
-                    BaseActiveRecord::EVENT_BEFORE_INSERT => ['updated_at'],
-                    BaseActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-                ],
-                // если вместо метки времени UNIX используется datetime:
-                // 'value' => new Expression('NOW()'),
-            ],
         ];
     }
 
@@ -68,11 +51,11 @@ class FullInfo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'address_id' => 'Address ID',
             'last_name' => 'Last Name',
             'patronymic' => 'Patronymic',
             'date_of_birth' => 'Date Of Birth',
             'gender' => 'Gender',
+            'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
     }
