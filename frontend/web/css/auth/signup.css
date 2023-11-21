@@ -21,7 +21,7 @@
 }
 
 #signupform-email, #signupform-login, #signupform-password, #signupform-phone{
-    height: 50px;
+    height: 60px;
     font-size: 20px;
 }
 
@@ -29,6 +29,15 @@
 .text_t235664{
     font-weight: 500;
 }
+
+@media(min-width: 768px){
+    #loginform-email, #loginform-login, #loginform-password, #loginform-phone{
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+
 
 
 

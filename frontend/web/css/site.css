@@ -140,3 +140,21 @@ a.desc:after {
     color: #de404f;
 }
 /*---end --- download*/
+
+@media(max-width: 767px){
+    .navbar-brand {
+        background: #218100;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .brandEndWord{
+        color: yellow;
+    }
+}
+.navbar-brand {
+    word-spacing: -2px;
+}
+
+
+

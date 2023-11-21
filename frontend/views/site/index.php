@@ -19,16 +19,16 @@ $this->title = 'Строй-Хоз-Маг';
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .category{
         color: black;
-        height: 30px;
-        padding: 5px 10px;
+        padding: 10px 25px;
         border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 4px;
+        margin: 5px 0;
         font-weight: 500;
         border: 1px solid #9f9f9f;
         box-shadow: 0 0 5px rgb(33, 129, 0);
@@ -37,6 +37,16 @@ $this->title = 'Строй-Хоз-Маг';
 
     .category:hover{
         background: #ddffdd;
+    }
+
+    @media(min-width: 768px){
+        .category{
+            padding: 5px 10px;
+            margin: 0 4px;
+        }
+        .categories{
+            justify-content: center;
+        }
     }
 
 
@@ -55,6 +65,8 @@ $this->title = 'Строй-Хоз-Маг';
                     <a href="#" class="category category_tool">Сантехника</a>
                     <a href="#" class="category category_tool">Электрика</a>
                     <a href="#" class="category category_tool">Краски</a>
+
+                <a href="#" class="category category_tool">Акция</a>
                     <a href="#" class="category category_tool">Для детей</a>
             </div>
         </div>

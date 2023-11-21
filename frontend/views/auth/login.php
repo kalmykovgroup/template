@@ -58,7 +58,7 @@ LoginAsset::register($this);
             ]) ?>
 
             <div class="blockBtnSendForm">
-                <a href="#">Войти</a>
+                <button type="submit">Войти</button>
             </div>
         </div>
         <div class="bottom_text_reg">Нет Аккаунта? пройдите &nbsp;<a href="<?=Url::to(['auth/signup']);?>">Регистрацию</a></div>

@@ -10,8 +10,15 @@
     display: none;
 }
 #loginform-email, #loginform-login, #loginform-password, #loginform-phone{
-    height: 50px;
+    height: 60px;
     font-size: 20px;
+}
+
+@media(min-width: 768px){
+    #loginform-email, #loginform-login, #loginform-password, #loginform-phone{
+        height: 50px;
+        font-size: 20px;
+    }
 }
 
 
