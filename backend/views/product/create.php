@@ -21,9 +21,9 @@ ProductCreateAsset::register($this);
 <div class="mainWrapper">
     <div class="main">
         <?php if(empty($product->id)):?>
-            <h4>Новый товар</h4>
+            <span class="title">Новый товар</span>
         <?php else: ?>
-            <h4>ID: <?=$product->id?></h4>
+            <span class="title"><span class="product_id">ID:</span> <?=$product->id?></span>
         <?php endif; ?>
 
         <?php $form = ActiveForm::begin([
@@ -113,126 +113,17 @@ ProductCreateAsset::register($this);
 
         <?php endif; ?>
 
+        <?= $form->field($productInfo, 'short_description')->textarea(['rows' => '6']) ?>
 
-            <div class="commonMessage" id="commonMessageFirstStage"></div>
+
 
             <div class="blockBtn">
+                <div class="commonMessage" id="commonMessageFirstStage"></div>
                    <?= Html::submitButton(empty($product->id) ? 'Создать новый продукт' : 'Сохранить изменения', ['class' => 'btn btn-primary']) ?>
             </div>
 
         <?php ActiveForm::end(); ?>
 
-        <style>
-            .blockUploadImg{
-                width: 100%;
-
-                padding: 5px;
-            }
-
-            #gridImg{
-                width: 100%;
-                min-height: 100px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .blockSelect{
-                width: 100%;
-                height: 100px;
-                border: 1px dashed #808080;
-                border-radius: 5px;
-                margin-top: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .field-uploadproductimg-imagefiles{
-                position: relative;
-            }
-
-            .field-uploadproductimg-imagefiles .invalid-feedback{
-                position: absolute;
-            }
-
-            .blockUploadImg .itemImg{
-                margin: 5px;
-                width: 110px;
-                height: 130px;
-                border: 1px solid #bdbdbd;
-                border-radius: 5px;
-                position: relative;
-                display: flex;
-                align-items: center;
-
-            }
-            .blockUploadImg .itemImg img{
-                max-width: 100%;
-                max-height: 100%;
-                background-size: contain;
-            }
-            .blockUploadImg .itemImg .delete_picture_box{
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                border: 1px solid #818181;
-                border-radius: 5px;
-                display: flex;
-                line-height: 5px;
-                color: #1e1e1e;
-                justify-content: center;
-                align-items: center;
-                top: -5px;
-                right: -5px;
-                background: white;
-                padding-bottom: 3px;
-                z-index: 2;
-                font: -apple-system-short-footnote;
-            }
-
-            .blockUploadImg .itemImg .delete_picture_box:hover{
-
-                color: #0d6efd;
-                border: 1px solid #0d6efd;
-                font-weight: 500;
-            }
-
-            .itemImg .blackout{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.25);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .itemImg .progress{
-                color: #007531;
-                z-index: 2;
-                padding: 3px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .curtainDeleted{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.2);
-                color: white;
-                font-size: 20px;
-                font-weight: 500;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .main_img{
-                box-shadow: 0 0 10px red;
-            }
-        </style>
 
         <?php if(!empty($product->id)):?>
 
@@ -244,7 +135,7 @@ ProductCreateAsset::register($this);
 
                     <?php if(is_dir($path)): ?>
 
-                        <?php $files = FileHelper::findFiles($path); ?>
+                        <?php $files = FileHelper::findFiles($path, ['recursive' => false]); ?>
 
                         <?php foreach($files as $key => $file): ?>
 
@@ -284,4 +175,12 @@ ProductCreateAsset::register($this);
             </div>
         <?php endif; ?>
 
+
+        <?php if(!empty($product->id)):?>
+            <h4>Характеристики в категории</h4>
+
+
+
+
+        <?php endif; ?>
     </div>

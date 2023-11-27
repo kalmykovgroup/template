@@ -46,8 +46,10 @@ class UploadProductImg extends Model
             $file = $this->imageFiles[0];
             $filename = time();
             for(; ;){
+
                 if(!file_exists($path . ++$filename . ".$file->extension")){
-                    return $file->saveAs($path . $filename . ".$file->extension");
+                    $filename .= ".$file->extension";
+                    return $file->saveAs($path . $filename);
                 }
             }
 

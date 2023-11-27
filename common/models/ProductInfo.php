@@ -39,12 +39,12 @@ class ProductInfo extends \yii\db\ActiveRecord
     public function rules(): array
     {
         return [
-            [['count', 'barcode', 'weight', 'width', 'height', 'length'], 'required', 'message' => "Не может быть пустым"],
+            [['count', 'barcode', 'weight', 'width', 'height', 'length', 'short_description'], 'required', 'message' => "Не может быть пустым"],
             [['product_id', 'count', 'brand_id','width', 'height', 'length'], 'integer'],
             ['weight' , 'double'],
             [['created_at', 'updated_at'], 'safe'],
             [['manufacturer_barcode', 'barcode', 'property_fields'], 'string', 'max' => 255],
-            [['short_description'], 'string', 'max' => 6000],
+            [['short_description'], 'string', 'max' => 6000, 'min' => 50],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::class, 'targetAttribute' => ['product_id' => 'id']],
             ['barcode', 'unique', 'message' => "Штрих-код уже занят, что-бы установить его на этом товаре, его нужно удалить на другом!"],
             ['manufacturer_barcode', 'unique', 'message' => "Штрих-код производителя уже установлен на другом товаре, что-бы установить его на этом товаре, его нужно удалить на другом!"],
@@ -63,7 +63,7 @@ class ProductInfo extends \yii\db\ActiveRecord
 
             'count' => 'Кол-во на складе',
             'property_fields' => 'Property Fields',
-            'short_description' => 'Короткое описание',
+            'short_description' => 'Короткое описание до 6000 сим.',
 
             'weight' => 'Вес кг.',
             'width' => 'Ширина см.',
