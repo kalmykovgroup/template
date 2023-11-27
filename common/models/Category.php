@@ -1,8 +1,6 @@
 <?php
 
-namespace app\models;
-
-use Yii;
+namespace common\models;
 
 /**
  * This is the model class for table "category".
@@ -15,6 +13,9 @@ use Yii;
  */
 class Category extends \yii\db\ActiveRecord
 {
+
+
+
     /**
      * {@inheritdoc}
      */

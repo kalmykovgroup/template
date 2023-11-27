@@ -2,9 +2,8 @@
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
-/** @var \app\models\LoginForm $model */
+/** @var app\models\LoginForm $model */
 
-use app\models\LoginForm;
 use frontend\assets\Auth\AuthAsset;
 use frontend\assets\Auth\LoginAsset;
 use yii\bootstrap5\ActiveForm;

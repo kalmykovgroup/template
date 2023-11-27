@@ -10,7 +10,7 @@ class m231120_160854_Product extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('product', [
             'id' => $this->primaryKey(),
@@ -18,7 +18,6 @@ class m231120_160854_Product extends Migration
             'name' => $this->string()->Null(),//Название товара
             'status' => $this->integer()->Null(),//Статус товара
             'unit' => $this->string()->notNull(), //Единица измерения
-            'count' => $this->integer()->notNull(), // кол-во в наличии
             'price' =>$this->string()->notNull(), //Текущая цена
             'old_price' =>$this->string()->Null(), //Старая цена
             'start_price' =>$this->string()->notNull(),//Цена закупки

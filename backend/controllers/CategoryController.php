@@ -6,15 +6,12 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 
-/**
- * Site controller
- */
-class SiteController extends Controller
+class CategoryController extends Controller
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
@@ -25,7 +22,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index', 'create'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -52,6 +49,7 @@ class SiteController extends Controller
         ];
     }
 
+
     /**
      * Displays homepage.
      *
@@ -63,5 +61,10 @@ class SiteController extends Controller
     }
 
 
+
+    public function actionCreate(): string
+    {
+        return $this->render('create');
+    }
 
 }

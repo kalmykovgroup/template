@@ -1,6 +1,7 @@
 main > .container, main > .container-fluid
 {
     padding: 70px 5px 20px;
+    font-family: YS Text,Helvetica,Arial,sans-serif;
 }
 
 .wrap {
@@ -155,6 +156,8 @@ a.desc:after {
 .navbar-brand {
     word-spacing: -2px;
 }
+
+
 
 
 

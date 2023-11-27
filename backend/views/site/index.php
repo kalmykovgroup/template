@@ -6,6 +6,7 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
+    <h2>Сдесь будет отображатся вся информация о состоянии приложения</h2>
     <div class="jumbotron text-center bg-transparent">
         <h1 class="display-4">Congratulations!</h1>
 

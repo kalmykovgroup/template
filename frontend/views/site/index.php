@@ -2,7 +2,7 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Строй-Хоз-Маг';
+$this->title = 'Строй Хоз Маг';
 ?>
 <style>
 

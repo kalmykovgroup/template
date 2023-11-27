@@ -2,6 +2,7 @@
 /* @var $errors arrayObject */
 
 ?>
+<h2>Сдесь будет информация об ошибках, возникших в приложении</h2>
 
 <a href="/admin/log/clear-log">Очистить</a><br>
 

@@ -2,8 +2,9 @@
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
-/** @var \app\models\LoginForm $model */
+/** @var LoginForm $model */
 
+use backend\models\LoginForm;
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
 
@@ -11,15 +12,20 @@ $this->title = 'Login';
 ?>
 <div class="site-login">
     <div class="mt-5 offset-lg-3 col-lg-6">
-        <h1><?= Html::encode($this->title) ?></h1>
 
-        <p>Please fill out the following fields to login:</p>
 
-        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?php $form = ActiveForm::begin([
+                'id' => 'login-form',
+                'fieldConfig' => [
+                    'template' => "{label}\n{input}\n{error}",
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
+                ],
+            ]); ?>
+
+            <?= $form->field($model, 'login')->textInput(['autofocus' => true]) ?>
+
+            <?= $form->field($model, 'password')->passwordInput()?>
 
             <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
