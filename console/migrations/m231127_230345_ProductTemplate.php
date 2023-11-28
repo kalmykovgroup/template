@@ -20,10 +20,9 @@ class m231127_230345_ProductTemplate extends Migration
 
         $this->createTable('product_template', [
             'id' => $this->primaryKey(),
-            'category_id' => $this->integer()->notNull(),
-            'json' => $this->string()->notNull(),
-            'created_at' => $this->timestamp()->defaultExpression('NOW()'),
-            'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->append('ON UPDATE NOW()'),
+            'category_id' => $this->integer()->notNull(), //Самое главное поле - для какой категории товаров
+            'name' => $this->string()->notNull(), //Название шаблона
+            'description' => $this->string()->notNull(), //Не большое описание шаблона
         ], $tableOptions);
 
         $this->addForeignKey('fk-product_template-category_id-category-id', 'product_template', 'category_id', 'category', 'id', 'CASCADE', 'CASCADE');
